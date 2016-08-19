@@ -1,0 +1,232 @@
+<!--
+  ~ Copyright (c) 2015. Fahad Alduraibi.
+  ~ http://www.fadvisor.net
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ShapedButton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="net.fadvisor.funwitharabic.GameActivity">
+
+    <LinearLayout
+        android:id="@+id/scoresFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wrong_ans_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7affffff"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textColor="#e10000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/result_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7affffff"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/correct_ans_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#7affffff"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textColor="#25e400"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scoresFrame"
+        android:indeterminate="false"
+        android:max="10"
+        android:progress="0"
+        android:progressDrawable="@drawable/progressbar" />
+
+    <TextView
+        android:id="@+id/txtQInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scoresFrame"
+        android:layout_gravity="center_horizontal"
+        android:background="#7affffff"
+        android:padding="10dp"
+        android:text="@string/titleInstruction"
+        android:textColor="#ff000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtQ"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtQInfo"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/q_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/dummy"
+        android:textColor="#ffFF0000"
+        android:textIsSelectable="false"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/txtQT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/txtQ"
+        android:layout_below="@+id/txtQInfo"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/qt_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/dummy"
+        android:textColor="#ff000000"
+        android:textIsSelectable="false"
+        android:textSize="40sp" />
+
+    <android.support.percent.PercentFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/btnFrame"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/txtQ">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:orientation="vertical"
+            app:layout_marginTopPercent="0%"
+            app:layout_widthPercent="52%">
+
+            <net.fadvisor.funwitharabic.ShapedButton
+                android:id="@+id/btn0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="buttonsOnClick"
+                android:text="@string/dummy"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                ShapedButton:color="#ff6666"
+                ShapedButton:normalBackground="@drawable/question_left_button_white_normal"
+                ShapedButton:pressedBackground="@drawable/question_left_button_white_pressed" />
+
+
+            <net.fadvisor.funwitharabic.ShapedButton
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="buttonsOnClick"
+                android:text="@string/dummy"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                ShapedButton:color="#aaffaa"
+                ShapedButton:normalBackground="@drawable/question_left_button_white_normal"
+                ShapedButton:pressedBackground="@drawable/question_left_button_white_pressed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:orientation="vertical"
+            app:layout_marginTopPercent="12%"
+            app:layout_widthPercent="52%">
+
+            <net.fadvisor.funwitharabic.ShapedButton
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="buttonsOnClick"
+                android:text="@string/dummy"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                ShapedButton:color="#9cd4ff"
+                ShapedButton:normalBackground="@drawable/question_right_button_white_normal"
+                ShapedButton:pressedBackground="@drawable/question_right_button_white_pressed" />
+
+            <net.fadvisor.funwitharabic.ShapedButton
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="buttonsOnClick"
+                android:text="@string/dummy"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                ShapedButton:color="#c800ff"
+                ShapedButton:normalBackground="@drawable/question_right_button_white_normal"
+                ShapedButton:pressedBackground="@drawable/question_right_button_white_pressed" />
+        </LinearLayout>
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:onClick="buttonsOnClick"
+            android:text="@string/btnBack"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            ShapedButton:color="#686868"
+            ShapedButton:normalBackground="@drawable/question_right_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/question_right_button_white_pressed" />
+    </android.support.percent.PercentFrameLayout>
+
+    <ImageButton
+        android:id="@+id/btnResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/txtQ"
+        android:background="#60ffffff"
+        android:contentDescription="@string/dummy"
+        android:onClick="buttonsOnClick"
+        android:paddingBottom="300dp"
+        android:src="@drawable/correct_answer"
+        android:visibility="visible" />
+
+</RelativeLayout>
+

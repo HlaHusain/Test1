@@ -1,0 +1,119 @@
+<!--
+  ~ Copyright (c) 2015. Fahad Alduraibi
+  ~ http://www.fadvisor.net
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ShapedButton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:background="@color/white"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <android.support.percent.PercentFrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9">
+
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:id="@+id/btnStart"
+            android:onClick="buttonsOnClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="40%"
+            app:layout_aspectRatio="90%"
+            ShapedButton:color="#0000ff"
+            ShapedButton:normalBackground="@drawable/hex_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/hex_button_white_pressed"
+            android:text="@string/start"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:id="@+id/btnExit"
+            android:onClick="buttonsOnClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="30%"
+            app:layout_aspectRatio="90%"
+            ShapedButton:color="#888888"
+            ShapedButton:normalBackground="@drawable/hex_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/hex_button_white_pressed"
+            android:text="@string/exit"
+            android:layout_gravity="top|right"
+            app:layout_marginRightPercent="16%"
+            app:layout_marginTopPercent="18%" />
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:id="@+id/btnAboutUs"
+            android:onClick="buttonsOnClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="30%"
+            app:layout_aspectRatio="90%"
+            android:text="@string/aboutus"
+            ShapedButton:pressedShift="10dp"
+            ShapedButton:color="#00ff00"
+            ShapedButton:normalBackground="@drawable/hex_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/hex_button_white_pressed"
+            android:layout_gravity="left|top"
+            app:layout_marginLeftPercent="16%"
+            app:layout_marginTopPercent="18%" />
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:id="@+id/btnPlayGames"
+            android:onClick="buttonsOnClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="30%"
+            app:layout_aspectRatio="90%"
+            android:text="@string/dummy"
+            ShapedButton:pressedShift="10dp"
+            ShapedButton:color="#00ffff"
+            ShapedButton:normalBackground="@drawable/hex_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/hex_button_white_pressed"
+            android:layout_gravity="right|bottom"
+            app:layout_marginRightPercent="16%"
+            app:layout_marginBottomPercent="18%" />
+
+        <net.fadvisor.funwitharabic.ShapedButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="30%"
+            app:layout_aspectRatio="90%"
+            android:text="@string/resultsbtn"
+            android:id="@+id/resultsbtn"
+            ShapedButton:normalBackground="@drawable/hex_button_white_normal"
+            ShapedButton:pressedBackground="@drawable/hex_button_white_pressed"
+            ShapedButton:color="#ff0000"
+            android:onClick="buttonsOnClick"
+            android:layout_gravity="right|center_vertical" />
+
+    </android.support.percent.PercentFrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/bottomframe"
+        android:layout_weight=".1">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="New Button"
+            android:id="@+id/button2"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+
+</LinearLayout>
